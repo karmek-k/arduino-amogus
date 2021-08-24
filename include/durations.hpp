@@ -10,7 +10,7 @@ enum duration {
 };
 
 constexpr double dot(duration d) {
-    return static_cast<double>(d) * 1.5;
+    return static_cast<double>(d) * 0.75;
 }
 
 #endif
