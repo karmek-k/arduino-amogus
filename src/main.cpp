@@ -11,9 +11,5 @@ void setup() {
 }
 
 void loop() {   
-    for (int i = 0; i < FREQS_SIZE; ++i) {
-        piezo.play(FREQS[i]);
-        delay(250);
-        piezo.stop();
-    }
+    play(piezo, 94);
 }
