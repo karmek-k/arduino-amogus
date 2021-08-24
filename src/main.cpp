@@ -11,5 +11,5 @@ void setup() {
 }
 
 void loop() {   
-    play(piezo, 94);
+    play(piezo, 94.0);
 }
