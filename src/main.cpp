@@ -1,10 +1,14 @@
 #include <Arduino.h>
+#include <Tone.h>
 
-const int PIEZO_PIN = 8;
+#include "song.hpp"
+
+Tone piezo;
+constexpr uint8_t PIEZO_PIN = 8;
 
 void setup() {
-    pinMode(PIEZO_PIN, OUTPUT);
-    tone(PIEZO_PIN, 440, 1000);
+    piezo.begin(PIEZO_PIN);
+    play(piezo, 94.0);
 }
 
 void loop() {
