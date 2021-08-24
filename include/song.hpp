@@ -3,22 +3,24 @@
 
 #include <Tone.h>
 
-
+#include "durations.hpp"
 
 constexpr uint16_t FREQS[] = {
     NOTE_C3, NOTE_C4, NOTE_DS4, NOTE_F4, NOTE_FS4, NOTE_F4, NOTE_DS4,
-    NOTE_C4, NOTE_D4, NOTE_C4, 0, 0, NOTE_G3,
-    NOTE_C3, NOTE_C3, NOTE_C4, NOTE_DS4, NOTE_F4, NOTE_FS4, NOTE_F4, NOTE_DS4,
-    NOTE_FS5, NOTE_FS5, NOTE_FS5, NOTE_FS5, 
+    NOTE_C4, NOTE_AS3, NOTE_D4, NOTE_C4, 0, NOTE_G3,
+    NOTE_C3, NOTE_C4, NOTE_DS4, NOTE_F4, NOTE_FS4, NOTE_F4, NOTE_DS4,
+    NOTE_FS4, 
 };
 
-constexpr double DURATIONS[] = {
-    4, 8, 8, 8, 8, 8, 8, 
-     
+const double DURATIONS[] = {
+    D_QUARTER, D_EIGHT, D_EIGHT, D_EIGHT, D_EIGHT, D_EIGHT, D_EIGHT,
+    dot(D_QUARTER), D_SIXTEENTH, D_SIXTEENTH, D_QUARTER, D_QUARTER, D_EIGHT,
+    D_QUARTER, D_EIGHT, D_EIGHT, D_EIGHT, D_EIGHT, D_EIGHT, D_EIGHT,
+    D_HALF
 };
 
 constexpr int FREQS_SIZE = sizeof(FREQS)/sizeof(FREQS[0]);
 
-void play(Tone piezo, float bpm);
+void play(Tone piezo, double bpm);
 
 #endif
