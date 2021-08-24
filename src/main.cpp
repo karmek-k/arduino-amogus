@@ -1,11 +1,16 @@
 #include <Arduino.h>
+#include <Tone.h>
 
-const int PIEZO_PIN = 8;
+Tone piezo;
+const uint8_t PIEZO_PIN = 8;
 
 void setup() {
-    pinMode(PIEZO_PIN, OUTPUT);
-    tone(PIEZO_PIN, 440, 1000);
+    piezo.begin(PIEZO_PIN);
 }
 
-void loop() {
+void loop() {   
+    piezo.play(NOTE_A4);
+    delay(1000);
+    piezo.stop();
+    delay(1000);
 }
